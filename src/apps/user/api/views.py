@@ -1,4 +1,10 @@
 from rest_framework.views import APIView
+from rest_framework.mixins import (
+    CreateModelMixin
+)
+from rest_framework.viewsets import (
+    GenericViewSet
+)
 from django.contrib.auth import get_user_model
 from rest_framework.response import Response
 from rest_framework import status
@@ -8,33 +14,41 @@ from django.http import HttpResponseRedirect
 
 # models
 
-from src.apps.user.models import CustomUser
+#from src.apps.user.models import CustomUser
+from src.apps.user.api.serializers import (
+   CreateUserSerializerClass,
+   LoginUserSerializerClass
+)
 
-class RegisterUser(APIView):
+class RegisterUser(GenericViewSet, CreateModelMixin):
         
-        def post(self, request):
+    serializer_class = CreateUserSerializerClass           
 
-            data = request.data
-            cpf = data['cpf']
-            born_date = data['born_date']
-            email = data['email']
-            first_name = data['first_name']
-            last_name = data['last_name']
-            password = data['password']
+    def Create(self, request):
 
-            user = CustomUser.objects.filter(username=email).first()
+        data = request.data
+        cpf = data['cpf']
+        born_date = data['born_date']
+        email = data['email']
+        first_name = data['first_name']
+        last_name = data['last_name']
+        password = data['password']
 
-            if user:
-                return Response('This user arredy exist!', status=status.HTTP_400_BAD_REQUEST)
-            
-            user = get_user_model()
-            user = user.objects.create_user(email=email, password=password, born_date=born_date, cpf=cpf, first_name=first_name, last_name=last_name)
+        user = CustomUser.objects.filter(username=email).first()
 
-            return Response({"status" : "ok", "details" : "User created"}, status=status.HTTP_200_OK)
+        if user:
+            return Response('This user arredy exist!', status=status.HTTP_400_BAD_REQUEST)
         
-class LoginUser(APIView):
+        user = get_user_model()
+        user = user.objects.create_user(email=email, password=password, born_date=born_date, cpf=cpf, first_name=first_name, last_name=last_name)
 
-     def post(self, request):
+        return Response({"status" : "ok", "details" : "User created"}, status=status.HTTP_200_OK)
+    
+class LoginUser(GenericViewSet, CreateModelMixin):
+
+    serializer_class = LoginUserSerializerClass
+
+    def Create(self, request):
 
         data = request.data
         username = data['email']

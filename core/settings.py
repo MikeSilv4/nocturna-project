@@ -34,7 +34,8 @@ INSTALLED_APPS = [
     'drf_yasg',
     'src.apps.items',
     'src.apps.user',
-    'src.apps.home'
+    'src.apps.home',
+    'src.apps.sales'
 ]
 
 MIDDLEWARE = [

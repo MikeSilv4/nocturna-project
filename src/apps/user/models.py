@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser, BaseUserManager
+from simple_history.models import HistoricalRecords
 
 class CustomUserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
@@ -30,6 +31,7 @@ class CustomUser(AbstractUser):
     email = models.CharField(max_length=512, null=False, unique=True)
     born_date = models.DateField(null=True)
     cpf = models.CharField(max_length=14, null=True)
+    history = HistoricalRecords()
 
     EMAIL_FIELD = "email"
     USERNAME_FIELD = "email"
