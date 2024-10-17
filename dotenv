@@ -1,0 +1,7 @@
+DEBUG = TRUE
+
+DB_NAME=nocturna
+DB_USER=postgres
+DB_USER_PASSWORD=postgres
+DB_HOST=localhost
+DB_PORT=5432
