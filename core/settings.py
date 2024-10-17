@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'src.apps.items',
     'src.apps.user',
     'src.apps.home',
-    'src.apps.sales'
+    'src.apps.sales',
 ]
 
 MIDDLEWARE = [

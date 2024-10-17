@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class SalesConfig(AppConfig):
+class DashConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'src.apps.sales'
+    name = 'dash'
