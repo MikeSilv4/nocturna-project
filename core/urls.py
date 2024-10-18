@@ -26,8 +26,7 @@ urlpatterns = [
     # apis
     path("api/user/", include("src.apps.user.api.urls")),
     path("api/item/", include("src.apps.items.api.urls")),
-    path("api/sales/", include("src.apps.sales.api.urls")),
     # dash
     path("dash/home/", include("src.apps.home.dash.urls")),
-    path("dash/sales/", include("src.apps.sales.dash.urls")),
+    path("sales/", include("src.apps.sales.urls")),
 ]

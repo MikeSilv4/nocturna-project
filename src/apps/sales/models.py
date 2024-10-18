@@ -1,7 +1,6 @@
 from django.db import models
 
-class Sales(models.Model):
-
+class Sale(models.Model):
     user = models.BigIntegerField(null=False)
     itemname = models.CharField(max_length=256, null=False, default="")
     itemdescription = models.CharField(max_length=512, null=False, default="")
@@ -11,6 +10,4 @@ class Sales(models.Model):
     saledate = models.DateField(null=False, auto_now_add=True)
 
     def __str__(self):
-        return self.itemname
-
-# Create your models here.
+        return 

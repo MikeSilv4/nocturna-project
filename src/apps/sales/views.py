@@ -1,3 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+def sales(request):
+    return render(request, 'sales/catalog/index.html')
