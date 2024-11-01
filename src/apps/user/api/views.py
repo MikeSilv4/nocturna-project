@@ -9,12 +9,14 @@ from django.contrib.auth import get_user_model
 from rest_framework.response import Response
 from rest_framework import status
 from django.contrib.auth import authenticate, login
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.http import HttpResponseRedirect
+from rest_framework.decorators import action
+from django.contrib.auth import logout
 
 # models
 
-#from src.apps.user.models import CustomUser
+from src.apps.user.models import CustomUser
 from src.apps.user.api.serializers import (
    CreateUserSerializerClass,
    LoginUserSerializerClass
@@ -23,8 +25,10 @@ from src.apps.user.api.serializers import (
 class RegisterUser(GenericViewSet, CreateModelMixin):
         
     serializer_class = CreateUserSerializerClass           
+    queryset = CustomUser.objects.all()
+    permission_classes = [AllowAny]
 
-    def Create(self, request):
+    def create(self, request):
 
         data = request.data
         cpf = data['cpf']
@@ -47,20 +51,32 @@ class RegisterUser(GenericViewSet, CreateModelMixin):
 class LoginUser(GenericViewSet, CreateModelMixin):
 
     serializer_class = LoginUserSerializerClass
+    queryset = CustomUser.objects.all()
+    permission_classes = [AllowAny]
+    
+    def get_serializer_class(self):
+        if self.action == 'create':
+            return LoginUserSerializerClass  
+        else:
+            return None
+        return super().get_serializer_class()
 
-    def Create(self, request):
+    def create(self, request):
 
-        data = request.data
-        username = data['email']
-        password = data['password']
-        user = authenticate(username=username, password=password)
-
+        serializer = self.serializer_class(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        print(serializer.data.get("username", None))
+        print(serializer.data.get("password", None))
+        user = authenticate(request, username=serializer.data.get("username", None), password=serializer.data.get("password", None))
+        print(user)
         if user:
-
-            user_data = CustomUser.objects.get(username=username)
             login(request, user)
-
-            return HttpResponseRedirect("/dash/organizer/home/event-create/")
-
+            return Response("logado", status=status.HTTP_200_OK)
         else:
             return Response('Incorrect data...', status=status.HTTP_400_BAD_REQUEST)
+
+    @action(detail=False, methods=['GET'])
+    def logout_user(self, request):
+        logout(request)
+
+        return Response("logout", status=status.HTTP_200_OK)
