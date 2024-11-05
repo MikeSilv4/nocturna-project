@@ -1,6 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.mixins import (
-    CreateModelMixin
+    CreateModelMixin,
+    DestroyModelMixin
 )
 from rest_framework.viewsets import (
     GenericViewSet
@@ -19,7 +20,8 @@ from django.contrib.auth import logout
 from src.apps.user.models import CustomUser
 from src.apps.user.api.serializers import (
    CreateUserSerializerClass,
-   LoginUserSerializerClass
+   LoginUserSerializerClass,
+   UserDeleteSerializerClass
 )
 
 class RegisterUser(GenericViewSet, CreateModelMixin):
@@ -48,7 +50,7 @@ class RegisterUser(GenericViewSet, CreateModelMixin):
 
         return Response({"status" : "ok", "details" : "User created"}, status=status.HTTP_200_OK)
     
-class LoginUser(GenericViewSet, CreateModelMixin):
+class LoginUser(GenericViewSet, CreateModelMixin, DestroyModelMixin):
 
     serializer_class = LoginUserSerializerClass
     queryset = CustomUser.objects.all()
@@ -56,6 +58,8 @@ class LoginUser(GenericViewSet, CreateModelMixin):
     
     def get_serializer_class(self):
         if self.action == 'create':
+            return LoginUserSerializerClass  
+        elif self.action == 'destroy':
             return LoginUserSerializerClass  
         else:
             return None
@@ -65,15 +69,25 @@ class LoginUser(GenericViewSet, CreateModelMixin):
 
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
-        print(serializer.data.get("username", None))
-        print(serializer.data.get("password", None))
         user = authenticate(request, username=serializer.data.get("username", None), password=serializer.data.get("password", None))
-        print(user)
+
         if user:
             login(request, user)
             return Response("logado", status=status.HTTP_200_OK)
         else:
             return Response('Incorrect data...', status=status.HTTP_400_BAD_REQUEST)
+
+    def destroy(self, request, pk, *args, **kwargs):
+
+        serializer = self.serializer_class(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        user = authenticate(request, username=serializer.data.get("username", None), password=serializer.data.get("password", None))
+
+        if user:
+            CustomUser.objects.filter(username=email).first().delete()
+            return Response("Deleted", status=status.HTTP_200_OK)
+        else:
+            return Response("Unautorizated", status=status.HTTP_400_BAD_REQUEST)
 
     @action(detail=False, methods=['GET'])
     def logout_user(self, request):

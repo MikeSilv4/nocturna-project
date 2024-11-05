@@ -14,3 +14,9 @@ class LoginUserSerializerClass(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
         fields = ["username", "password"]
+
+class UserDeleteSerializerClass(serializers.ModelSerializer):
+
+    class Meta:
+        model = CustomUser
+        fields = ["password"]
