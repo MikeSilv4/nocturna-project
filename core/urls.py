@@ -30,4 +30,5 @@ urlpatterns = [
     # dash
     path("dash/home/", include("src.apps.home.dash.urls")),
     path("dash/sales/", include("src.apps.sales.dash.urls")),
+    path("dash/user/", include("src.apps.user.dash.urls")),
 ]

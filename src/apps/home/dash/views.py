@@ -6,3 +6,7 @@ from django.contrib.auth.decorators import login_required
 def catalog(request):
     context = {}
     return render(request, 'home/catalog/index.html', context)
+
+def homepage(request):
+    context = {}
+    return render(request, 'home/homepage/index.html', context)
