@@ -94,3 +94,7 @@ class LoginUser(GenericViewSet, CreateModelMixin, DestroyModelMixin):
         logout(request)
 
         return Response("logout", status=status.HTTP_200_OK)
+
+def listar_usuarios(request):
+    usuarios = Usuario.objects.values()  # Retorna todos os registros como dicionário
+    return JsonResponse(list(usuarios), safe=False)

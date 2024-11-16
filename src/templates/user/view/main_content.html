@@ -2,12 +2,42 @@
 
 <form>
     <div>
-        LOGIN
+        Conta
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="user_firstname">Nome</label>
+            <input type="text" id="user_firstname">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="user_lastname">Sobrenome</label>
+            <input type="text" id="user_lastname">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="user_borndate">Data de Nascimento</label>
+            <input type="date" id="user_borndate">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="user_cpf">CPF</label>
+            <input type="text" id="user_cpf">
+        </div>
     </div>
     <div class="row">
         <div class="col">
             <label for="user_email">E-mail</label>
             <input type="email" id="user_email">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="user_username">Nome de Usuário</label>
+            <input type="text" id="user_username">
         </div>
     </div>
     <div class="row">
@@ -18,9 +48,14 @@
     </div>
     <div class="row">
         <div class="col">
-            <button type="button" class="btn btn-primary" onclick="login();">Alterar</button>
-            <button type="button" class="btn btn-primary" onclick="login();">Deletar</button>
-            <a href="../create">Voltar</a>
+            <button type="button" class="btn btn-primary" onclick="alter();">Alterar</button>
+            <button type="button" class="btn btn-primary" onclick="delete();">Deletar</button>
+            <button type="button" class="btn btn-primary" onclick="backhome();">Voltar</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p id="email">Oi</p>
         </div>
     </div>
 </form>

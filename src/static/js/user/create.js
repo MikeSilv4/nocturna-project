@@ -14,11 +14,7 @@ fetch(url, {
     })
     .then((response) => {
         if(response.ok){
-<<<<<<< HEAD
-            window.location.href = `${window.location.origin}/dash/home/`;
-=======
             window.location.href = `${window.location.origin}/dash/user/login/`;
->>>>>>> c17bebeb6da7246c8bd307ced5cb32b98661a676
         }else{
             Swal.fire({
                 title: "Erro",
@@ -39,7 +35,12 @@ function getData(){
     let born_date = document.getElementById("user_borndate").value;
     let cpf = document.getElementById("user_cpf").value;
     let email = document.getElementById("user_email").value;
+    let username = document.getElementById("user_username").value;
     let password = document.getElementById("user_password").value;
 
     return {first_name, last_name, born_date, cpf, email, username, password};
+}
+
+function backlogin(){
+    window.location.href = "../login/";
 }

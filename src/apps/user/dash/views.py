@@ -10,3 +10,7 @@ def login(request):
 def create(request):
     context = {}
     return render(request, 'user/create/index.html', context)
+
+def view(request):
+    context = {}
+    return render(request, 'user/view/index.html', context)
