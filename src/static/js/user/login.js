@@ -14,7 +14,6 @@ function login(){
         })
         .then((response) => {
             if(response.ok){
-                sessionStorage.setItem("user", JSON.stringify(data["username"]));
                 window.location.href = `${window.location.origin}/dash/home/`;
             }
             else{

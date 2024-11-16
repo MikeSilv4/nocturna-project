@@ -1,10 +1,5 @@
-window.onload = function(){
-    const user = JSON.parse(sessionStorage.getItem("user"));
-    console.log(user);
-}
-
 function goview(){
-    window.location.href = "../user/view/";
+    window.location.href = window.location.origin + "/dash/user/view/";
 }
 
 function logout(){

@@ -7,19 +7,19 @@
     <div class="row">
         <div class="col">
             <label for="user_firstname">Nome</label>
-            <input type="text" id="user_firstname">
+            <input type="text" id="user_firstname" value="{{ user.first_name }}">
         </div>
     </div>
     <div class="row">
         <div class="col">
             <label for="user_lastname">Sobrenome</label>
-            <input type="text" id="user_lastname">
+            <input type="text" id="user_lastname" value="{{ user.last_name }}">
         </div>
     </div>
     <div class="row">
         <div class="col">
             <label for="user_borndate">Data de Nascimento</label>
-            <input type="date" id="user_borndate">
+            <input type="date" id="user_borndate" value="{{ user.born_date }}">
         </div>
     </div>
     <div class="row">
