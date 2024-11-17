@@ -2,10 +2,11 @@ function deleteuser(){
 
     let data = getDataDelete();
     console.log(data);
-    const url = new URL('/api/user/login/{id}/', window.location.origin);
+    const url = new URL('/api/user/login/' + data + '/', window.location.origin);
+    console.log(url);
 
 fetch(url, {
-    method: 'POST',
+    method: 'DELETE',
     headers: {
         'Content-Type': 'application/json',
         'X-CSRFToken': getCookie('csrftoken')

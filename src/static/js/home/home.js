@@ -1,20 +1,19 @@
+window.
+
 function goview(){
     window.location.href = window.location.origin + "/dash/user/view/";
 }
 
 function logout(){
 
-    let data = getData();
-    console.log(data);
     const url = new URL('/api/user/login/logout_user', window.location.origin);
 
     fetch(url, {
-        method: 'POST',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json',
             'X-CSRFToken': getCookie('csrftoken')
-        },
-            body: JSON.stringify(data)
+        }
         })
         .then((response) => {
             if(response.ok){
