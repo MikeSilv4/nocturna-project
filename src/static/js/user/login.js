@@ -40,5 +40,5 @@ function getData(){
 }
 
 function gocreate(){
-    window.location.href = "../create/";
+    window.location.href = window.location.origin + "/dash/user/create/";
 }

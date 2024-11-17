@@ -18,7 +18,7 @@ function logout(){
         })
         .then((response) => {
             if(response.ok){
-                window.location.href = `../user/login`;
+                window.location.href = `${window.location.origin}/dash/user/login`;
             }
             else{
                 Swal.fire({
@@ -36,7 +36,9 @@ function logout(){
 
 function getData(){
 
-    const email = JSON.parse(sessionStorage.getItem("user"));
-    console.log(email);
+    let username = document.getElementById("user_email").value;
+    let password = document.getElementById("user_password").value;
+
+    return {username, password};
 
 }

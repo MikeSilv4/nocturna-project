@@ -6,6 +6,12 @@
     </div>
     <div class="row">
         <div class="col">
+            <label for="user_id">ID</label>
+            <input type="text" id="user_id" value="{{ user.id }}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
             <label for="user_firstname">Nome</label>
             <input type="text" id="user_firstname" value="{{ user.first_name }}">
         </div>
@@ -25,37 +31,26 @@
     <div class="row">
         <div class="col">
             <label for="user_cpf">CPF</label>
-            <input type="text" id="user_cpf">
+            <input type="text" id="user_cpf" value="{{ user.cpf }}">
         </div>
     </div>
     <div class="row">
         <div class="col">
             <label for="user_email">E-mail</label>
-            <input type="email" id="user_email">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <label for="user_username">Nome de Usuário</label>
-            <input type="text" id="user_username">
+            <input type="email" id="user_email" value="{{ user.email }}">
         </div>
     </div>
     <div class="row">
         <div class="col">
             <label for="user_password">Senha</label>
-            <input type="password" id="user_password">
+            <input type="password" id="user_password" value="{{ user.password }}">
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <button type="button" class="btn btn-primary" onclick="alter();">Alterar</button>
-            <button type="button" class="btn btn-primary" onclick="delete();">Deletar</button>
+            <button type="button" class="btn btn-primary" onclick="alteruser();">Alterar</button>
+            <button type="button" class="btn btn-primary" onclick="deleteuser();">Deletar</button>
             <button type="button" class="btn btn-primary" onclick="backhome();">Voltar</button>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <p id="email">Oi</p>
         </div>
     </div>
 </form>

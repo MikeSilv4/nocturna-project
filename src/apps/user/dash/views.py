@@ -13,7 +13,6 @@ def create(request):
     return render(request, 'user/create/index.html', context)
 
 def view(request):
-    
     user = CustomUser.objects.get(id=request.user.pk)
     user.born_date = user.born_date.strftime("%Y-%m-%d")
     context = {"user" : user}
