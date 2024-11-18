@@ -1,0 +1,50 @@
+{% load static %}
+<main 
+    class="container d-flex justify-content-center align-content-center flex-wrap" style="width: 100vw; height: 100vh;">
+    <div 
+        class="container" 
+        style="background-color: #501c16; min-width: 30vw; max-width: 30vw; border-radius: 16px; box-shadow: 3px 3px 3px 3px #ad981d;">
+
+        <div class="loader-container d-none" id="loader">
+            <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">Carregando...</span>
+            </div>
+        </div>
+
+        <div class="row-auto mt-5">
+            <div class="col">
+                <h3 class="text-center" style="color: white;">Recuperacao de senha</h3>
+            </div>
+        </div>
+        <form id="formId">
+            <div class="row d-flex justify-content-center mt-2">
+                <div class="col col-sm-12 col-md-12">
+                        <label class="form-label d-flex justify-content-left" for="user_email" style="color: #D9814E;">Email</label>  
+                        <input
+                            class="form-control"
+                            id="user_email"
+                            type="text"
+                            placeholder="example@gmail.com"
+                            required
+                        />
+                </div>
+            </div>
+        </form>
+        <div class="row mt-2 mb-2">
+            <div class="col">
+                <button type="button" class="btn btn-primary"
+                        onclick="history.back();">
+                            Voltar
+                </button> 
+            </div>
+            <div class="col d-flex justify-content-end">
+                <button type="button" class="btn btn-success"
+                        id="email" onclick="requestNewPassword();">
+                        Pedir nova senha    
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+</main>

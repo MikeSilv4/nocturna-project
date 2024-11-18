@@ -14,7 +14,9 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.http import HttpResponseRedirect
 from rest_framework.decorators import action
 from django.contrib.auth import logout
-
+import random
+from django.core.mail import EmailMessage
+from django.conf import settings
 # models
 
 from src.apps.user.models import CustomUser
@@ -94,3 +96,26 @@ class LoginUser(GenericViewSet, CreateModelMixin, DestroyModelMixin):
         logout(request)
 
         return Response("logout", status=status.HTTP_200_OK)
+
+class ForgotPassword(GenericViewSet, CreateModelMixin):
+        
+    serializer_class = CreateUserSerializerClass           
+    queryset = CustomUser.objects.all()
+    permission_classes = [AllowAny]
+
+    def create(self, request):
+        try:
+            email = request.data.get("email", None)
+            user = CustomUser.objects.get(username=email)
+            new_password = "".join([str(random.randint(1, 100)) for i in range(20)])
+            user.set_password(new_password)
+            user.save()
+
+            email = EmailMessage(subject='Nova senha', body=f"Ola, sua senha provisoria e '{new_password}'",
+                            from_email=settings.EMAIL_HOST_USER,
+                            to=[email])
+            email.send()
+            return Response('Enviado', status=status.HTTP_200_OK)
+        except Exception as e:
+            print(e)
+            return Response('Usuario nao existe', status=status.HTTP_400_BAD_REQUEST)

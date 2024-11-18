@@ -7,12 +7,14 @@ from rest_framework.routers import DefaultRouter
 
 from src.apps.user.api.views import (
     RegisterUser,
-    LoginUser
+    LoginUser,
+    ForgotPassword
 )
 
 router = DefaultRouter()
 router.register(r'create', RegisterUser, basename='register')
 router.register(r'login', LoginUser, basename='login')
+router.register(r'forgot-password', ForgotPassword, basename='forgot_password')
 
 urlpatterns = [
     

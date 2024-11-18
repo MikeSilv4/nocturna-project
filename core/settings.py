@@ -19,6 +19,12 @@ ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'user.CustomUser'
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'mike.silva@grupocpcon.com'
+EMAIL_HOST_PASSWORD = 'yinxvdtagldudkvy'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+
 # Application definition
 
 INSTALLED_APPS = [
