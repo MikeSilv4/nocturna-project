@@ -7,11 +7,13 @@ app_name = 'src.apps.user.dash'
 from src.apps.user.dash.views import (
     Login,
     ForgotPassword,
-    CreateAccount
+    CreateAccount,
+    ViewAccount,
 )
 
 urlpatterns = [
     path("login/", Login, name="login-dash"),
     path("forgot-password/", ForgotPassword, name="forgot-password-dash"),
     path("create-account/", CreateAccount, name="create-dash"),
+    path("view-account/", ViewAccount, name="create-dash"),
 ]

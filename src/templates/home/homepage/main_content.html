@@ -1,5 +1,19 @@
 {% load static %}
 
 <header>
-    <h2>Sex and tals</h2>
+    <div class="row mt-4">
+        <div class="col d-flex justify-content-center flex-wrap">
+            <h1>Sex and Tals</h1>
+            <div class="form-outline col-sm-6 col-md-9 d-flex justify-content-center flex-wrap">
+                <button type="button" class="btn btn-success flex-wrap"
+                        style="--bs-btn-padding-y: 7px; --bs-btn-padding-x: 70px; --bs-btn-font-size: 14px;" onclick="go_view_account();">
+                        Ver Conta
+                </button>
+                <button type="button" class="btn btn-danger flex-wrap"
+                        style="--bs-btn-padding-y: 7px; --bs-btn-padding-x: 70px; --bs-btn-font-size: 14px;" onclick="logout_account();">
+                        Logout
+                </button>
+            </div>
+        </div>
+    </div>
 </header>
