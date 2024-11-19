@@ -1,0 +1,122 @@
+{% load static %}
+
+<main class="d-flex justify-content-center align-content-center flex-wrap" style="width: 100vw; height: 100vh;">
+    <div class="d-flex justify-content-center flex-wrap" style="background-color: #501c16; min-width: 70vw; min-height: 70vh; max-width: 30vw; max-height: 70vh; border-radius: 16px; box-shadow: 3px 3px 3px 3px #ad981d;">
+        <div class="conteiner text-center" style="width: 80%; height: 80%;">
+            <div class="row d-flex justify-content-center mt-5">
+                <div class="col-auto">
+                    <label style="font-size: 40px; color: #ffffff;">Criar Conta</label>
+                </div>
+            </div>
+            <form id="formId">
+                <div class="row mt-1">
+                    <div class="col d-flex justify-content-center">
+                        <div class="form-outline col-sm-12 col-md-12">
+                            <label class="form-label d-flex justify-content-left" for="user_email" style="color: #ffffff;">Nome</label>
+                            <input
+                                class="form-control"
+                                id="user_first_name"
+                                type="text"
+                                placeholder="Maria"
+                                required
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col d-flex justify-content-center">
+                        <div class="form-outline col-sm-12 col-md-12">
+                            <label class="form-label d-flex justify-content-left" for="user_email" style="color: #ffffff;">Sobrenome</label>
+                            <input
+                                class="form-control"
+                                id="user_last_name"
+                                type="text"
+                                placeholder="Antonieta"
+                                required
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col d-flex justify-content-center">
+                        <div class="form-outline col-sm-12 col-md-12">
+                            <label class="form-label d-flex justify-content-left" for="user_email" style="color: #ffffff;">Data de Nascimento</label>
+                            <input
+                                class="form-control"
+                                id="user_born_date"
+                                type="date"
+                                placeholder="dd/mm/aaaa"
+                                required
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col d-flex justify-content-center">
+                        <div class="form-outline col-sm-12 col-md-12">
+                            <label class="form-label d-flex justify-content-left" for="user_email" style="color: #ffffff;">CPF</label>
+                            <input
+                                class="form-control"
+                                id="user_cpf"
+                                type="text"
+                                placeholder="000.000.000-00"
+                                required
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col d-flex justify-content-center">
+                        <div class="form-outline col-sm-12 col-md-12">
+                            <label class="form-label d-flex justify-content-left" for="user_email" style="color: #ffffff;">E-mail</label>  
+                            <input
+                                class="form-control"
+                                id="user_email"
+                                type="email"
+                                placeholder="example@gmail.com"
+                                required
+                            />
+                        </div>
+                    </div>
+                </div>   
+                <div class="row mt-1">
+                    <div class="col d-flex justify-content-center">
+                        <div class="form-outline col-sm-12 col-md-12">
+                            <label class="form-label d-flex justify-content-left" for="user_password" style="color: #ffffff;">Senha</label>
+                            <input
+                                class="form-control"
+                                id="user_password"
+                                type="password"
+                                placeholder="password"
+                                required
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col d-flex justify-content-center flex-wrap">
+                        <div class="form-outline col-sm-6 col-md-9 d-flex justify-content-center flex-wrap">
+                            <button type="button" class="btn btn-success flex-wrap"
+                                style="--bs-btn-padding-y: 7px; --bs-btn-padding-x: 70px; --bs-btn-font-size: 14px;" onclick="create_account();">
+                                Registrar
+                            </button>
+                            <button type="reset" class="btn btn-warning flex-wrap"
+                                style="--bs-btn-padding-y: 7px; --bs-btn-padding-x: 70px; --bs-btn-font-size: 14px;" onclick="">
+                                Limpar
+                            </button>
+                            <button type="button" class="btn btn-danger flex-wrap"
+                                style="--bs-btn-padding-y: 7px; --bs-btn-padding-x: 70px; --bs-btn-font-size: 14px;" id="enterButton" onclick="back_login();">
+                                Sair
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+
+
+
+

@@ -10,3 +10,7 @@ def Login(request):
 def ForgotPassword(request):
     context = {}
     return render(request, 'user/forgot_password/index.html', context)
+
+def CreateAccount(request):
+    context = {}
+    return render(request, 'user/create_account/index.html', context)

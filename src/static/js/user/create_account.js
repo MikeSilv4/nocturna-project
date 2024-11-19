@@ -1,4 +1,4 @@
-function login(){
+function create_account(){
 
     let form = document.getElementById("formId");
 
@@ -6,7 +6,7 @@ function login(){
 
         Swal.fire({
             title: "Erro",
-            text: "Por favor, preencha os campos de E-mail e senha.",
+            text: "Por favor, preencha todos os campos necessários.",
             icon: "error"
         });
 
@@ -14,7 +14,7 @@ function login(){
     }
 
     let data = getData();
-    const url = new URL('/api/user/login/', window.location.origin);
+    const url = new URL('/api/user/create/', window.location.origin);
     console.log(url);
     fetch(url, {
         method: 'POST',
@@ -27,11 +27,11 @@ function login(){
     .then((response) => {
         console.log(response);
         if(response.ok){
-            window.location.href = `${window.location.origin}/dash/home/`;
+            window.location.href = `${window.location.origin}/dash/user/login/`;
         }else{
             Swal.fire({
                 title: "Erro",
-                text: "Login/Senha invalida",
+                text: "Ocorreu um erro, por favor tente novamente.",
                 icon: "error"
             });
         }
@@ -44,15 +44,19 @@ function login(){
 
 function getData(){
 
-    let username = document.getElementById("user_email").value;
+    let first_name = document.getElementById("user_first_name").value;
+    let last_name = document.getElementById("user_last_name").value;
+    let born_date = document.getElementById("user_born_date").value;
+    let cpf = document.getElementById("user_cpf").value;
+    let email = document.getElementById("user_email").value;
     let password = document.getElementById("user_password").value;
 
-    return {username, password};
+    return {first_name, last_name, born_date, cpf, email, password};
 
 }
 
-function gocreateaccount(){
+function back_login(){
 
-    window.location.href = window.location.origin + "/dash/user/create-account/";
+    window.location.href = window.location.origin + "/dash/user/login/";
 
 }
