@@ -10,3 +10,7 @@ def catalog(request):
 def homepage(request):
     context = {}
     return render(request, 'home/homepage/index.html', context)
+
+def orlando(request):
+    context = {}
+    return render(request, 'home/orlando/index.html', context)
