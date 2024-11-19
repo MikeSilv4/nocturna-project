@@ -20,3 +20,17 @@ class UserDeleteSerializerClass(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
         fields = ["password"]
+
+class CreateUserSerializerClass(serializers.ModelSerializer):
+
+    class Meta:
+        model = CustomUser
+        fields = ['first_name', 'last_name', 'email', 'password', 'born_date', 'cpf']
+
+    def update(self, instance, validated_data):
+        password = validated_data.pop('password', None)
+        user = super().update(instance, validated_data)
+        if password:
+            user.set_password(password) 
+            user.save()
+        return user

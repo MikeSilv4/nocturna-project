@@ -14,24 +14,89 @@
 
         <div class="row-auto mt-5">
             <div class="col">
-                <h3 class="text-center" style="color: white;">Recuperacao de senha</h3>
+                <h3 class="text-center" style="color: white;">Criar usuario</h3>
             </div>
         </div>
         <form id="formId">
             <div class="row d-flex justify-content-center mt-2">
+                <div class="col col-sm-6 col-md-6">
+                        <label class="form-label d-flex justify-content-left" for="user_first_name" style="color: #D9814E;">Primeiro Nome</label>  
+                        <input
+                            class="form-control"
+                            id="user_first_name"
+                            type="text"
+                            placeholder="Ana"
+                            required
+                        />
+                </div>
+                <div class="col col-sm-6 col-md-6">
+                    <label class="form-label d-flex justify-content-left" for="user_last_name" style="color: #D9814E;">Ultimo Nome</label>  
+                    <input
+                        class="form-control"
+                        id="user_last_name"
+                        type="text"
+                        placeholder="Silva"
+                        required
+                    />
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center mt-2">
                 <div class="col col-sm-12 col-md-12">
-                        <label class="form-label d-flex justify-content-left" for="user_email" style="color: #D9814E;">Email</label>  
+                        <label class="form-label d-flex justify-content-left" for="user_email" style="color: #D9814E;">E-mail</label>  
                         <input
                             class="form-control"
                             id="user_email"
+                            type="email"
+                            placeholder="ana.silva@gmail.com"
+                            required
+                        />
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center mt-2">
+                <div class="col col-sm-6 col-md-6">
+                        <label class="form-label d-flex justify-content-left" for="user_cpf" style="color: #D9814E;">CPF</label>  
+                        <input
+                            class="form-control"
+                            id="user_cpf"
                             type="text"
-                            placeholder="example@gmail.com"
+                            placeholder="123456789"
+                            required
+                        />
+                </div>
+                <div class="col col-sm-6 col-md-6">
+                    <label class="form-label d-flex justify-content-left" for="user_born_date" style="color: #D9814E;">Data de nacimento</label>  
+                    <input
+                        class="form-control"
+                        id="user_born_date"
+                        type="date"
+                        required
+                    />
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center mt-2">
+                <div class="col col-sm-12 col-md-12">
+                        <label class="form-label d-flex justify-content-left" for="user_password_1" style="color: #D9814E;">Senha</label>  
+                        <input
+                            class="form-control"
+                            id="user_password_1"
+                            type="password"
+                            required
+                        />
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center mt-2">
+                <div class="col col-sm-12 col-md-12">
+                        <label class="form-label d-flex justify-content-left" for="user_password_2" style="color: #D9814E;">Repita a senha</label>  
+                        <input
+                            class="form-control"
+                            id="user_password_2"
+                            type="password"
                             required
                         />
                 </div>
             </div>
         </form>
-        <div class="row mt-2 mb-2">
+        <div class="row mt-5 mb-2">
             <div class="col">
                 <button type="button" class="btn btn-primary"
                         onclick="history.back();">
@@ -40,8 +105,8 @@
             </div>
             <div class="col d-flex justify-content-end">
                 <button type="button" class="btn btn-success"
-                        id="email" onclick="requestNewPassword();">
-                        Pedir nova senha    
+                        id="email" onclick="register();">
+                        Criar  
                 </button>
             </div>
         </div>
