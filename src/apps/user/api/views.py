@@ -113,7 +113,7 @@ class UserViewSet(viewsets.ModelViewSet):
         user = CustomUser.objects.filter(username=email).first()
 
         if user:
-            return Response('This user arredy exist!', status=status.HTTP_400_BAD_REQUEST)
+            return Response({"status" : "nok", "details" : "Ja existe um usuario com este e-mail"}, status=status.HTTP_400_BAD_REQUEST)
         
         user = get_user_model()
         user = user.objects.create_user(email=email, password=password, born_date=born_date, cpf=cpf, first_name=first_name, last_name=last_name)

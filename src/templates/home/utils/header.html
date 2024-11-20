@@ -1,59 +1,47 @@
 {% load static %}
 
-<header data-scroll="120" data-scroll-show class="header">
-    <div class="header__main">
-        <div class="header__container">
-            <div class="header__main--wrap">
-                <div class="header__logo--wrap">
-                    <a href="" class="header__logo--pc">
-                        <img src="{% static 'images/utils/logo.png' %}" alt="" style="max-width: 100px">
-                    </a>
-                </div>
-                <div data-da=".header,767.98,3" class="header__search search">
-                    <form action="#" class="search__form">
-                        <input type="text" name="search" placeholder="Pesquise" class="search__input">
-                        <button type="submit" class="search__button _icon-search"></button>
-                        <button type="button" class="search__clear _icon-del"></button>
-                    </form>
-                </div>
-                <div class="header__block">
-                    <a href="" class="header__icon">
-                        <img src="{% static 'images/icons/cart_01.svg' %}" alt="">
-                    </a>
-                    <a href="" class="header__icon">
-                        <img src="{% static 'images/icons/user_4.svg' %}" alt="" style="color: white; max-width: 20px;">
-                    </a>
+<header>
+    <div class="container-fluid" style="background-color: #191919;">
+        <div class="row">
+            <div class="col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <a href="{% url 'src.apps.home.dash:homepage-dash' %}" class="">
+                                <img src="{% static 'images/utils/logo.png' %}" alt="" style="max-width: 200px">
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="header__bottom">
-        <div class="header__container">
-            <nav class="header__menu menu">
-                <ul data-spollers="991.98,max" data-one-spoller class="menu__list">
-                    <li class="menu__item">
-                        <a href="{% url 'src.apps.home.dash:catalog-dash' %}" class="menu__link">Catalogo</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="" class="menu__link">Comentarios</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="header__socials socials">
-                <div class="socials__item">
-                    <div class="socials__list">
-                        <a href="" class="socials__link">
-                            <span class="socials__icon _icon-mail"></span>
-                        </a>
-                        <a href="" class="socials__link">
-                            <span class="socials__icon _icon-viber"></span>
-                        </a>
-                        <a href="" class="socials__link">
-                            <span class="socials__icon _icon-telegram"></span>
-                        </a>
-                        <a href="" class="socials__link">
-                            <span class="socials__icon _icon-whatsapp"></span>
-                        </a>
+            <div class="col d-flex justify-content-center align-items-center">
+                <div class="container">
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <div class="col-auto">
+                            <a href="{% url 'src.apps.home.dash:homepage-dash' %}" style="color: white;">Home</a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="{% url 'src.apps.home.dash:catalog-dash' %}" style="color: white;">Catalogo</a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="" style="color: white;">Comentarios</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-end align-items-center">
+                <div class="container-fluid">
+                    <div class="row justify-content-end align-items-center">
+                        <div class="col-auto justify-content-center align-items-center">
+                            <a href="" class="">
+                                <img src="{% static 'images/icons/bag.svg' %}" alt="" style="max-width: 30px;">
+                            </a>
+                        </div>
+                        <div class="col-auto justify-content-end align-items-center">
+                            <a href="" class="">
+                                <img src="{% static 'images/icons/user_4.svg' %}" alt="" style="max-width: 30px;">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
