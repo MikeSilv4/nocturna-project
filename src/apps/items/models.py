@@ -9,6 +9,7 @@ class Items(models.Model):
     value = models.DecimalField("Item value", max_digits=20, decimal_places=4, null=False, default=None)
     category = models.CharField("Item categoty", max_length=256, null=True, default=None)
     stock_quantity = models.IntegerField("Item stock quantity", default=0, null=False)
+    image = models.CharField("Item Image", max_length=4096, null=True, default=None)
     
     class Meta:
         managed = True

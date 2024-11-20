@@ -1,15 +1,182 @@
 {% load static %}
 
-<header>
-    <h2>Nocturna</h2>
-    <nav class="d-flex justify-content-center">
-        <a class="pr-3" href="#">Promoções</a>
-        <a class="mr-1" href="#">Comunidade</a>
-        <a class="mr-1" href="#">Conta</a>
-        <a href="#">Sobre nos</a>
-    </nav>
-</header>
-
-<main>
-  <table id="items-table"></table>
+<main class="no-style">
+  <div class="container-fluid mb-5">
+    <div class="row d-flex justify-content-center">
+      <div class="col d-flex justify-content-center">
+        <form action="#" class="search__form">
+          <input type="text" name="search" placeholder="Pesquise" class="search__input" style="width: 50vw;">
+          <button type="reset" class="search__button">
+              <img src="{% static 'images/icons/trash.svg' %}" alt="" style="max-width: 20px;">
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col col-sm-2 col-md-2">
+        <div class="container">
+          <form>
+            <div class="row">
+              <div class="col col-sm-12 col-md-12 d-flex justify-content-center">
+                <label><h4>Filtros</h4></label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col col-sm-12 col-md-12">
+                <hr>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col col-sm-12 col-md-12 d-flex justify-content-center">
+                <label><h6>Categorias</h6></label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-auto">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="brinquedos">
+                    <label class="form-check-label" for="brinquedos">Brinquedos</label>
+                  </div>
+              </div>
+              <div class="col-auto">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="lubrificantes">
+                  <label class="form-check-label" for="lubrificantes">Lubrificantes</label>
+                </div>
+              </div>
+              <div class="col-auto">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="bicos_aneis">
+                  <label class="form-check-label" for="bicos_aneis">Bicos e anéis de montagem</label>
+                </div>
+              </div>
+              <div class="col-auto">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="strapon">
+                  <label class="form-check-label" for="strapon">Strapon</label>
+                </div>
+              </div>
+              <div class="col-auto">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="bdsm_fetiche">
+                  <label class="form-check-label" for="bdsm_fetiche">BDSM e fetiche</label>
+                </div>
+              </div>
+              <div class="col-auto">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="moveis">
+                  <label class="form-check-label" for="moveis">Móveis para sexo</label>
+                </div>
+              </div>
+              <div class="col-auto">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="jogos">
+                  <label class="form-check-label" for="jogos">Jogos</label>
+                </div>
+              </div>
+              <div class="col-auto">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="outros">
+                  <label class="form-check-label" for="outros">Outros</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col col-sm-12 col-md-12">
+                <hr>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col col-sm-12 col-md-12 d-flex justify-content-center">
+                <label><h6>Preços</h6></label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col col-sm-6 col-md-6">
+                <label for="value__gte" class="form-label">De</label>
+                <input class="form-control" type="number" id="value__gte">
+              </div>
+              <div class="col col-sm-6 col-md-6">
+                <label for="value__lte" class="form-label">Até</label>
+                <input class="form-control" type="number" id="value__lte">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col col-sm-12 col-md-12">
+                <hr>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col col-sm-12 col-md-12 d-flex justify-content-center">
+                <label><h6>Tamanhos</h6></label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col col-sm-12 col-md-12">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="tam_1">
+                    <label class="form-check-label" for="tam_1">XXS</label>
+                  </div>
+              </div>
+              <div class="col col-sm-12 col-md-12">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="tam_1">
+                  <label class="form-check-label" for="tam_1">XS</label>
+                </div>
+              </div>
+              <div class="col col-sm-12 col-md-12">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="tam_1">
+                  <label class="form-check-label" for="tam_1">S</label>
+                </div>
+              </div>
+              <div class="col col-sm-12 col-md-12">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="tam_1">
+                  <label class="form-check-label" for="tam_1">M</label>
+                </div>
+              </div>
+              <div class="col col-sm-12 col-md-12">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="tam_1">
+                  <label class="form-check-label" for="tam_1">XL</label>
+                </div>
+              </div>
+              <div class="col col-sm-12 col-md-12">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="tam_1">
+                  <label class="form-check-label" for="tam_1">XXL</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col col-sm-12 col-md-12">
+                <hr>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col col-sm-9 col-md-9">
+        <div class="container-fluid">
+          <div class="row" id="table_content"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
+<div class="container mt-5 mb-5">
+  <div class="row-auto d-flex justify-content-center">
+    <div class="col-auto d-flex justify-content-center">
+      <button type="button" class="btn btn-light" id="previous" onclick="decreaseFilter();">Anterior</button>
+    </div>
+    <div class="col-auto d-flex justify-content-center">
+      <button type="button" class="btn btn-light" id="page" disabled></button>
+    </div>
+    <div class="col-auto d-flex justify-content-center">
+      <button type="button" class="btn btn-light" id="next" onclick="increaseFilter();">Proximo</button>
+    </div>
+  </div>
+</div>
