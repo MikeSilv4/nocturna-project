@@ -1,7 +1,18 @@
 {% load static %}
 
 <main class="d-flex justify-content-center align-content-center flex-wrap" style="width: 100vw; height: 100vh;">
-    <div class="d-flex justify-content-center flex-wrap" style="background-color: #020202; min-width: 30vw; min-height: 70vh; max-width: 30vw; max-height: 70vh; border-radius: 16px; box-shadow: 3px 3px 3px 3px #ad981d;">
+    <div class="main__bg--wrap">
+        <div class="main__bg--left">
+            <img src="{% static 'images/background/bg_01.svg' %}" alt="">
+        </div>
+        <div class="main__bg--right">
+            <img src="{% static 'images/background/bg_02.svg' %}" alt="">
+        </div>
+        <div class="main__bg--mob">
+            <img src="{% static 'images/background/bg_03.svg' %}" alt="">
+        </div>
+    </div>
+    <div class="d-flex justify-content-center flex-wrap" style="background-color: purple; min-width: 30vw; min-height: 60vh; max-width: 30vw; max-height: 70vh; border-radius: 16px;">
         <div class="conteiner text-center" style="width: 80%; height: 80%;">
             <div class="row d-flex justify-content-center mt-5">
                 <div class="col-auto">
@@ -12,7 +23,7 @@
                 <div class="row mt-5">
                     <div class="col d-flex justify-content-center">
                         <div class="form-outline col-sm-12 col-md-12">
-                            <label class="form-label d-flex justify-content-left" for="user_email" style="color: #ffffff;">E-mail</label>  
+                            <label class="form-label d-flex justify-content-left" for="user_email" style="color: #ffffff;">E-mail</label>
                             <input
                                 class="form-control"
                                 id="user_email"
@@ -22,7 +33,7 @@
                             />
                         </div>
                     </div>
-                </div>   
+                </div>
                 <div class="row mt-4">
                     <div class="col d-flex justify-content-center">
                         <div class="form-outline col-sm-12 col-md-12">
@@ -36,14 +47,14 @@
                             />
                         </div>
                     </div>
-                </div>   
+                </div>
                 <div class="row mt-2">
                     <div class="col d-flex justify-content-center">
                         <div class="form-outline col-sm-9 col-md-12 d-flex justify-content-left">
                             <button type="button" class="btn btn-link" style="font-size: 12px; color: #ffffff;" onclick="location.href='{% url 'src.apps.user.dash:forgot-password-dash' %}'">Esqueci a senha </button>
                         </div>
                     </div>
-                </div>   
+                </div>
                 <div class="row mt-5">
                     <div class="col d-flex justify-content-center flex-wrap">
                         <div class="form-outline col-sm-6 col-md-9 d-flex justify-content-center flex-wrap">
@@ -53,12 +64,12 @@
                             </button>
                         </div>
                     </div>
-                </div>  
+                </div>
                 <div class="row mt-3">
                     <div class="col d-flex justify-content-center align-content-center">
-                        <label class="form-label d-flex justify-content-left" for="formControlemail" style="color: #ffffff;">Ou</label>  
+                        <label class="form-label d-flex justify-content-left" for="formControlemail" style="color: #ffffff;">Ou</label>
                     </div>
-                </div>  
+                </div>
                 <div class="row mt-2">
                     <div class="col d-flex justify-content-center flex-wrap">
                         <div class="form-outline col-sm-6 col-md-9 d-flex justify-content-center flex-wrap">
@@ -68,7 +79,7 @@
                             </button>
                         </div>
                     </div>
-                </div>   
+                </div>
             </form>
         </div>
     </div>
