@@ -13,3 +13,18 @@ function getCookie(cname) {
     }
     return "";
 }
+
+function loader(){
+
+    let spinner = Swal.fire({
+        title: 'Carregando...',
+        text: 'Estamos processando sua solicitação.',
+        allowOutsideClick: false,
+        didOpen: () => {
+            Swal.showLoading();
+        }
+    });
+
+    return spinner;
+    
+}
