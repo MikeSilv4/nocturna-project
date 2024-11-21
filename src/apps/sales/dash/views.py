@@ -6,3 +6,7 @@ from django.contrib.auth.decorators import login_required
 def sale_item(request):
     context = {}
     return render(request, 'sales/sale_item/index.html', context)
+
+def bag(request):
+    context = {}
+    return render(request, 'sales/bag/index.html', context)

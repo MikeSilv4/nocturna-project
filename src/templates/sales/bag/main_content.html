@@ -1,0 +1,181 @@
+{% load static %}
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__info">
+				<div class="header__container">
+					<div class="header__info--wrap">
+						<a href="" class="header__callback"><span>Nocturna ao seu dispor</span></a>
+						<div class="header__time">Suporte das 10:00 a 21:00</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main>
+			<section class="checkout">
+				<div class="checkout__container">
+					<div class="checkout__wrapper">
+						<div class="checkout__main">
+							<a data-da=".total-checkout__wrapper,991.98,0" href="" class="checkout__logo">
+								<img src="{% static 'images/utils/logo.png' %}" alt="" style="max-width: 200px">
+							</a>
+							<div class="checkout__inner">
+								<div class="checkout__order order-checkout">
+									<div class="order-checkout__item">
+										<div class="order-checkout__wrap">
+											<a href="" class="order-checkout__image lazy_image">
+												<picture><source data-srcset="{% static 'images/products/category-01.webp' %}" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="images/products/category-01.png" alt=""></picture>
+											</a>
+										</div>
+										<div class="order-checkout__content">
+											<div class="order-checkout__top">
+												<a href="" class="order-checkout__title">Massageador LELO Smart Wand 2 Grande</a>
+												<div class="order-checkout__price--one">$ 250</div>
+											</div>
+											<div class="order-checkout__price">Cor : Roxo</div>
+										</div>
+									</div>
+									<div class="order-checkout__item">
+										<div class="order-checkout__wrap">
+											<a href="" class="order-checkout__image lazy_image">
+												<picture><source data-srcset="img/models/models_001.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/models/models_001.png" alt=""></picture>
+											</a>
+										</div>
+										<div class="order-checkout__content">
+											<div class="order-checkout__top">
+												<a href="" class="order-checkout__title">Massageador LELO Smart Wand 2 Grande</a>
+												<div class="order-checkout__price--one">$ 250</div>
+											</div>
+											<div class="order-checkout__price">Tamanho: XL</div>
+										</div>
+									</div>
+									<div class="order-checkout__item">
+										<div class="order-checkout__wrap">
+											<a href="" class="order-checkout__image lazy_image">
+												<picture><source data-srcset="img/models/models_001.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/models/models_001.png" alt=""></picture>
+											</a>
+										</div>
+										<div class="order-checkout__content">
+											<div class="order-checkout__top">
+												<a href="" class="order-checkout__title">Massageador LELO Smart Wand 2 Grande</a>
+												<div class="order-checkout__price--one">$ 250</div>
+											</div>
+											<div class="order-checkout__price">Tamanho: XL</div>
+										</div>
+									</div>
+								</div>
+								<form action="" class="checkout__form form-checkout">
+									<div class="form-checkout__wrapper">
+										<div class="form-checkout__list">
+											<div class="form-checkout__item">
+												<div class="form-checkout__title">Dados do destinatário</div>
+												<div class="form-checkout__data">
+													<input data-error="Campo obrigatório" type="text" name="name" placeholder="Nome Completo" data-required="name" data-validate class="form-checkout__input">
+												</div>
+												<div class="form-checkout__data">
+													<input data-error="Campo obrigatório" type="text" name="surname" placeholder="Endereço" data-required="name" data-validate class="form-checkout__input">
+												</div>
+												<div class="form-checkout__data">
+													<input data-error="Campo obrigatório" type="text" name="surname" placeholder="CEP" data-required="name" data-validate class="form-checkout__input">
+												</div>
+												<div class="form-checkout__data">
+													<input type="email" name="email" placeholder="E-mail" class="form-checkout__input">
+												</div>
+												<div class="form-checkout__data">
+													<input data-error="Campo obrigatório" type="tel" name="phone" data-required="phone" data-validate placeholder="+55 (0__) ___-__-__*" class="form-checkout__input phone-mask">
+												</div>
+												<div class="form-checkout__checkbox">
+													<input class="form-checkout__checkbox--input" type="checkbox" id="call">
+													<label class="form-checkout__checkbox--label" for="call">
+														<div class="form-checkout__checkbox--text">confirmando o pedido e aguardando a entrega</div>
+													</label>
+												</div>
+											</div>
+											<div class="form-checkout__item form-checkout__item--radio">
+												<div class="form-checkout__title">Método de entrega</div>
+												<div class="form-checkout__radio">
+													<input type="radio" name="shipping_method" id="novaposhta.department" data-error="Campo obrigatório" data-required data-validate class="form-checkout__radio--input">
+													<label for="novaposhta.department" class="form-checkout__radio--label">
+														<div class="form-checkout__radio--icon"></div>
+														<div class="form-checkout__radio--text">Retirar na Loja </div>
+													</label>
+												</div>
+												<div class="form-checkout__radio">
+													<input type="radio" name="shipping_method" id="novaposhta.doors" data-error="Campo obrigatório" data-required data-validate class="form-checkout__radio--input">
+													<label for="novaposhta.doors" class="form-checkout__radio--label">
+														<div class="form-checkout__radio--icon"></div>
+														<div class="form-checkout__radio--text">Entregar </div>
+													</label>
+												</div>
+											</div>
+											<div class="form-checkout__item">
+												<div class="form-checkout__title">Endereço de entrega</div>
+												<div class="form-checkout__data">
+													<input data-error="Campo obrigatório" type="text" name="sity" placeholder="Cidade*" data-required="name" data-validate class="form-checkout__input">
+												</div>
+												<div class="form-checkout__data">
+													<input data-error="Campo obrigatório" type="text" name="mail" placeholder="Bairro" data-required="name" data-validate class="form-checkout__input">
+												</div>
+											</div>
+											<div class="form-checkout__item form-checkout__item--radio">
+												<div class="form-checkout__title">Pagamento</div>
+												<div class="form-checkout__radio">
+													<input type="radio" name="pay" id="pay.online" data-error="Campo obrigatório" data-required data-validate class="form-checkout__radio--input">
+													<label for="pay.online" class="form-checkout__radio--label">
+														<div class="form-checkout__radio--icon"></div>
+														<div class="form-checkout__radio--text">Visa on-line, MasterCard, PIX</div>
+													</label>
+												</div>
+												<div class="form-checkout__radio">
+													<input type="radio" name="pay" id="pay.cash" data-error="Campo obrigatório" data-required data-validate class="form-checkout__radio--input">
+													<label for="pay.cash" class="form-checkout__radio--label">
+														<div class="form-checkout__radio--icon"></div>
+														<div class="form-checkout__radio--text">Pagamento no recebimento</div>
+													</label>
+												</div>
+											</div>
+											<div class="form-checkout__item">
+												<div class="form-checkout__title">Comentário</div>
+												<div class="form-checkout__data">
+													<textarea placeholder="Comentário" class="form-checkout__textarea"></textarea>
+												</div>
+												<div class="form-checkout__data">
+													<input type="text" name="promocode" placeholder="Código promocional" class="form-checkout__input">
+												</div>
+											</div>
+										</div>
+										<button type="submit" class="form-checkout__buy--btn">Finalizar Pedido</button>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="checkout__total total-checkout">
+							<div class="total-checkout__wrapper">
+								<h4 class="total-checkout__title">Resumo do Pedido</h4>
+								<ul class="total-checkout__list">
+									<li class="total-checkout__item">
+										<div class="total-checkout__info"><span>Produto(s) 4 peças:</span></div>
+										<div class="total-checkout__data">$ 1000</div>
+									</li>
+									<li class="total-checkout__item">
+										<div class="total-checkout__info"><span>Custo de entrega:</span></div>
+										<div class="total-checkout__data">Frente Gratis</div>
+									</li>
+									<li class="total-checkout__item">
+										<div class="total-checkout__info"><span>Total:</span></div>
+										<div class="total-checkout__data">$ 1000</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="checkout__footer">з 10:00 до 21:00 без вихідних</div>
+				</div>
+			</section>
+		</main>
+	</div>
+	<script src="/sexshop.site-main/js/app.js"></script>
+</body>
+
+</html>

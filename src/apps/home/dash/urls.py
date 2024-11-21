@@ -6,7 +6,7 @@ app_name = 'src.apps.home.dash'
 # views
 from src.apps.home.dash.views import (
     catalog,
-    homepage
+    homepage,
 )
 
 urlpatterns = [

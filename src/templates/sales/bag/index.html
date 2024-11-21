@@ -1,0 +1,12 @@
+{% extends 'utils/base.html' %}
+{% load static %}
+
+{% block content %}
+    {% include 'sales/bag/main_content.html' %}
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/utils.js' %}"></script>
+    <script src="{% static 'js/home/list_items.js' %}"></script>
+
+{% endblock %}
