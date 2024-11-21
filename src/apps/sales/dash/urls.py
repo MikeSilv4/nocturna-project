@@ -1,6 +1,8 @@
 from django.urls import path
 from django.urls import include
 
+app_name = 'src.apps.sales.dash'
+
 # views
 from src.apps.sales.dash.views import (
     sale_item,

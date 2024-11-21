@@ -10,3 +10,7 @@ def catalog(request):
 def homepage(request):
     context = {}
     return render(request, 'home/homepage/index.html', context)
+
+def contacts(request):
+    context = {}
+    return render(request, 'home/contacts/index.html', context)
