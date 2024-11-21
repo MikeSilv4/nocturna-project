@@ -12,3 +12,7 @@ class SaleSerializerrClass(serializers.Serializer):
     user_id = serializers.CharField(required=True)
     item_id = serializers.CharField(required=True)
     quantity = serializers.DecimalField(required=True, max_digits=20, decimal_places=4)
+
+class SaleBuySerializerrClass(serializers.Serializer):
+
+    value = serializers.FloatField(required=True)

@@ -12,6 +12,13 @@
         </form>
       </div>
     </div>
+    {% if user.is_superuser %}
+      <div class="row d-flex justify-content-center mt-2">
+        <div class="col d-flex justify-content-center">
+          <button type="button" class="btn btn-dark" id="open_create_modal">Criar Item</button>
+        </div>
+      </div>
+    {% endif %}
   </div>
   <div class="container-fluid">
     <div class="row">
@@ -177,6 +184,86 @@
     </div>
     <div class="col-auto d-flex justify-content-center">
       <button type="button" class="btn btn-light" id="next" onclick="increaseFilter();">Proximo</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="create_item_modal" tabindex="-1" role="dialog" aria-labelledby="meuModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="meuModalLabel">Criar Item</h5>
+        <button type="button" id="close_create_item">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <form>
+            <div class="row">
+              <div class="col col-sm-4 col-md-4">
+                <div class="">
+                  <label class="form-check-label" for="name">Nome</label>
+                  <input type="text" class="form-control" id="name">
+                </div>
+              </div>
+              <div class="col col-sm-4 col-md-4">
+                <div class="">
+                  <label class="form-check-label" for="brand">Marca</label>
+                  <input type="text" class="form-control" id="brand">
+                </div>
+              </div>
+              <div class="col col-sm-4 col-md-4">
+                <div class="">
+                  <label class="form-check-label" for="model">Modelo</label>
+                  <input type="text" class="form-control" id="model">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col col-sm-12 col-md-12">
+                <div class="">
+                  <label class="form-check-label" for="name">Descricao</label>
+                  <textarea class="form-control" id="description" rows="2"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col col-sm-6 col-md-6">
+                <div class="">
+                  <label class="form-check-label" for="category">categoria</label>
+                  <select id="category" class="form-select">
+                    <option value="Brinquedos">Brinquedos</option>
+                    <option value="Lubrificantes">Lubrificantes</option>
+                    <option value="Bicos e anéis de montagem">Bicos e anéis de montagem</option>
+                    <option value="Strapon">Strapon</option>
+                    <option value="BDSM e fetiche">BDSM e fetiche</option>
+                    <option value="Móveis para sexo">Móveis para sexo</option>
+                    <option value="Jogos">Jogos</option>
+                    <option value="Outros">Outros</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col col-sm-3 col-md-3">
+                <div class="">
+                  <label class="form-check-label" for="quantity">Quantidade</label>
+                  <input type="number" class="form-control" id="quantity">
+                </div>
+              </div>
+              <div class="col col-sm-3 col-md-3">
+                <div class="">
+                  <label class="form-check-label" for="value">Valor</label>
+                  <input type="number" class="form-control" id="value">
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark">Criar</button>
+      </div>
     </div>
   </div>
 </div>

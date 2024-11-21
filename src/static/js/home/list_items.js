@@ -62,9 +62,9 @@ function makeData(data){
                     <img src="${element.image}" class="card-img-top" alt="${element.name}">
                     <div class="card-body">
                         <h5 class="card-title">${element.name}</h5>
-                        <p class="card-text">Preço: R$ ${element.value}</p>
+                        <p class="card-text">Preço: R$ ${element.value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
                     </div>
-                    <button data-popup="" class="product__buy--btn">Compra</button>
+                    <button class="product__buy--btn">Adicionar à sacola</button>
                 </div>
             </div>
         `;
@@ -89,3 +89,14 @@ function decreaseFilter(){
 function newPage(){
     document.getElementById("page").innerHTML = `${page}/${Math.floor(total_items/filters["limit"])}`;
 }
+
+function producViewModal(id){
+
+}
+
+document.getElementById("open_create_modal").addEventListener("click", function() {
+    $("#create_item_modal").modal("show");
+});
+document.getElementById("close_create_item").addEventListener("click", function() {
+    $("#create_item_modal").modal("hide");
+});
