@@ -2,9 +2,20 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework import status
 from django.contrib.auth.decorators import login_required
+from src.apps.user.models import CustomUser
 
 def catalog(request):
-    context = {}
+
+    email = request.user.email
+    
+    if email:
+        user = CustomUser.objects.filter(email=email).first()
+    else:
+        user = None
+
+    context = {
+        "user" : user
+    }
     return render(request, 'home/catalog/index.html', context)
 
 def homepage(request):
