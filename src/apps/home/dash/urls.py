@@ -7,11 +7,13 @@ app_name = 'src.apps.home.dash'
 from src.apps.home.dash.views import (
     catalog,
     homepage,
-    contacts
+    contacts,
+    sucess,
 )
 
 urlpatterns = [
     path("catalog/", catalog, name="catalog-dash"),
     path("", homepage, name="homepage-dash"),
     path("contacts/", contacts, name="contacts-dash"),
+    path("sucess/", sucess, name="sucess-dash"),
 ]

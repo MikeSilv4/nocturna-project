@@ -14,3 +14,7 @@ def homepage(request):
 def contacts(request):
     context = {}
     return render(request, 'home/contacts/index.html', context)
+
+def sucess(request):
+    context = {}
+    return render(request, 'home/sucess/index.html', context)

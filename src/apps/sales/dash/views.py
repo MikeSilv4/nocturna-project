@@ -10,3 +10,15 @@ def sale_item(request):
 def bag(request):
     context = {}
     return render(request, 'sales/bag/index.html', context)
+
+def favorite_item(request):
+    context = {}
+    return render(request, 'sales/favorite_item/index.html', context)
+
+def view_item(request):
+    context = {}
+    return render(request, 'sales/view_item/index.html', context)
+
+def promotions(request):
+    context = {}
+    return render(request, 'sales/promotions/index.html', context)
