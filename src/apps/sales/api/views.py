@@ -3,6 +3,8 @@ from rest_framework.response import Response
 from rest_framework import viewsets, status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.mixins import ListModelMixin, CreateModelMixin, RetrieveModelMixin, DestroyModelMixin
+import qrcode
+from django.http import HttpResponse
 
 from src.apps.sales.models import (
     Sales
@@ -13,6 +15,7 @@ from src.apps.items.models import (
 )
 
 from src.apps.sales.api.serializers import (
+    SaleBuySerializerrClass,
     SalesAllFieldsSerializer,
     SaleSerializerrClass
 )
@@ -62,3 +65,24 @@ class SalesViewSet(viewsets.GenericViewSet, ListModelMixin, CreateModelMixin, Re
             item.save()
 
             return Response("ok", status=status.HTTP_202_ACCEPTED)
+
+class GeneratePay(viewsets.GenericViewSet, CreateModelMixin):
+
+    serializer_class = SaleBuySerializerrClass
+    autentication_class = (IsAuthenticated,)
+
+    def create(self, request, *args, **kwargs):
+        
+        serializer = self.serializer_class(data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+        chave_pix = "10604649932"
+        valor = 10.00
+
+        pix_data = f"00020101021129370016BR.GOV.BCB.PIX0114{chave_pix}52040000{valor:.2f}5303986"
+        qr = qrcode.make(pix_data)
+
+        response = HttpResponse(content_type="image/png")
+        qr.save(response, "PNG")
+
+        return response
