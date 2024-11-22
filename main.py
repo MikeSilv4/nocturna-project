@@ -17,5 +17,5 @@ for i in range(1000):
         category="vibradores",
         stock_quantity=10,
         value=1,
-        image="https://avatars.githubusercontent.com/u/103974890?v=4"
+        image="https://http2.mlstatic.com/vibrador-hitachi-magic-wand-extreme-2-accesorios-punto-g-cli-D_NQ_NP_886377-MLM41070968113_032020-F.jpg"
     )
