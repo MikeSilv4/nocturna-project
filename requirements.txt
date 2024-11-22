@@ -7,3 +7,5 @@ psycopg2-binary==2.9.9
 python-decouple==3.8
 django-simple-history==3.7.0
 setuptools==75.1.0
+django-qrcode~=0.3
+requests~=2.31.0

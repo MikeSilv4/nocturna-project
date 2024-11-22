@@ -1,9 +1,19 @@
 {% load static %}
-<main 
-    class="container d-flex justify-content-center align-content-center flex-wrap" style="width: 100vw; height: 100vh;">
+<main class="container d-flex justify-content-center align-content-center flex-wrap" style="width: 100vw; height: 100vh;">
+    <div class="main__bg--wrap">
+        <div class="main__bg--left">
+            <img src="{% static 'images/background/bg_01.svg' %}" alt="">
+        </div>
+        <div class="main__bg--right">
+            <img src="{% static 'images/background/bg_02.svg' %}" alt="">
+        </div>
+        <div class="main__bg--mob">
+            <img src="{% static 'images/background/bg_03.svg' %}" alt="">
+        </div>
+    </div>
     <div 
         class="container" 
-        style="background-color: #501c16; min-width: 30vw; max-width: 30vw; border-radius: 16px; box-shadow: 3px 3px 3px 3px #ad981d;">
+        style="background-color: purple; min-width: 30vw; max-width: 30vw; border-radius: 16px;">
 
         <div class="loader-container d-none" id="loader">
             <div class="spinner-border text-primary" role="status">
@@ -13,13 +23,13 @@
 
         <div class="row-auto mt-5">
             <div class="col">
-                <h3 class="text-center" style="color: white;">Recuperacao de senha</h3>
+                <h3 class="text-center" style="color: white;">Recuperação de senha</h3>
             </div>
         </div>
         <form id="formId">
             <div class="row d-flex justify-content-center mt-2">
                 <div class="col col-sm-12 col-md-12">
-                        <label class="form-label d-flex justify-content-left" for="user_email" style="color: #D9814E;">Email</label>  
+                        <label class="form-label d-flex justify-content-left" for="user_email" style="color: white;">Email</label>
                         <input
                             class="form-control"
                             id="user_email"

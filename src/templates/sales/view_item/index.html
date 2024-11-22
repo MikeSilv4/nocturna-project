@@ -2,7 +2,9 @@
 {% load static %}
 
 {% block content %}
+    {% include 'home/utils/header.html' %}
     {% include 'sales/view_item/main_content.html' %}
+    {% include 'home/utils/footer.html' %}
 {% endblock %}
 
 {% block scripts %}

@@ -1,10 +1,20 @@
 {% load static %}
 
-<main 
-    class="container d-flex justify-content-center align-content-center flex-wrap" style="width: 100vw; height: 100vh;">
-    <div 
+<main class="container d-flex justify-content-center align-content-center flex-wrap" style="width: 100vw; height: 100vh;">
+    <div class="main__bg--wrap">
+        <div class="main__bg--left">
+            <img src="{% static 'images/background/bg_01.svg' %}" alt="">
+        </div>
+        <div class="main__bg--right">
+            <img src="{% static 'images/background/bg_02.svg' %}" alt="">
+        </div>
+        <div class="main__bg--mob">
+            <img src="{% static 'images/background/bg_03.svg' %}" alt="">
+        </div>
+    </div>
+    <div
         class="container" 
-        style="background-color: #501c16; min-width: 30vw; max-width: 30vw; border-radius: 16px; box-shadow: 3px 3px 3px 3px #ad981d;">
+        style="background-color: purple; min-width: 30vw; max-width: 30vw; border-radius: 16px;">
 
         <div class="loader-container d-none" id="loader">
             <div class="spinner-border text-primary" role="status">
@@ -20,7 +30,7 @@
         <form id="formId">
             <div class="row d-flex justify-content-center mt-2">
                 <div class="col col-sm-6 col-md-6">
-                        <label class="form-label d-flex justify-content-left" for="user_first_name" style="color: #D9814E;">Primeiro Nome</label>  
+                        <label class="form-label d-flex justify-content-left" for="user_first_name" style="color: white;">Primeiro Nome</label>
                         <input
                             class="form-control"
                             id="user_first_name"
@@ -30,7 +40,7 @@
                         />
                 </div>
                 <div class="col col-sm-6 col-md-6">
-                    <label class="form-label d-flex justify-content-left" for="user_last_name" style="color: #D9814E;">Ultimo Nome</label>  
+                    <label class="form-label d-flex justify-content-left" for="user_last_name" style="color: white;">Último Nome</label>
                     <input
                         class="form-control"
                         id="user_last_name"
@@ -42,7 +52,7 @@
             </div>
             <div class="row d-flex justify-content-center mt-2">
                 <div class="col col-sm-12 col-md-12">
-                        <label class="form-label d-flex justify-content-left" for="user_email" style="color: #D9814E;">E-mail</label>  
+                        <label class="form-label d-flex justify-content-left" for="user_email" style="color: white;">E-mail</label>
                         <input
                             class="form-control"
                             id="user_email"
@@ -54,7 +64,7 @@
             </div>
             <div class="row d-flex justify-content-center mt-2">
                 <div class="col col-sm-6 col-md-6">
-                        <label class="form-label d-flex justify-content-left" for="user_cpf" style="color: #D9814E;">CPF</label>  
+                        <label class="form-label d-flex justify-content-left" for="user_cpf" style="color: white;">CPF</label>
                         <input
                             class="form-control"
                             id="user_cpf"
@@ -66,7 +76,7 @@
                         />
                 </div>
                 <div class="col col-sm-6 col-md-6">
-                    <label class="form-label d-flex justify-content-left" for="user_born_date" style="color: #D9814E;">Data de nacimento</label>  
+                    <label class="form-label d-flex justify-content-left" for="user_born_date" style="color: white;">Data de nacimento</label>
                     <input
                         class="form-control"
                         id="user_born_date"
@@ -77,7 +87,7 @@
             </div>
             <div class="row d-flex justify-content-center mt-2">
                 <div class="col col-sm-12 col-md-12">
-                        <label class="form-label d-flex justify-content-left" for="user_password_1" style="color: #D9814E;">Senha</label>  
+                        <label class="form-label d-flex justify-content-left" for="user_password_1" style="color: white;">Senha</label>
                         <input
                             class="form-control"
                             id="user_password_1"
@@ -88,7 +98,7 @@
             </div>
             <div class="row d-flex justify-content-center mt-2">
                 <div class="col col-sm-12 col-md-12">
-                        <label class="form-label d-flex justify-content-left" for="user_password_2" style="color: #D9814E;">Repita a senha</label>  
+                        <label class="form-label d-flex justify-content-left" for="user_password_2" style="color: white;">Repita a senha</label>
                         <input
                             class="form-control"
                             id="user_password_2"
