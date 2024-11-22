@@ -87,7 +87,7 @@ class ForgotPassword(GenericViewSet, CreateModelMixin):
 
 class UserViewSet(viewsets.ModelViewSet):
 
-    autentication_class = (IsAuthenticated,)
+    autentication_class = (AllowAny,)
     queryset = CustomUser.objects.all()
     serializer_class = CreateUserSerializerClass
 
