@@ -7,11 +7,13 @@ app_name = 'src.apps.user.dash'
 from src.apps.user.dash.views import (
     Login,
     ForgotPassword,
-    Create
+    Create,
+    Update
 )
 
 urlpatterns = [
     path("login/", Login, name="login-dash"),
     path("forgot-password/", ForgotPassword, name="forgot-password-dash"),
     path("create/", Create, name="create-dash"),
+    path("update/", Update, name="user-update-dash"),
 ]

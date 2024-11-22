@@ -1,0 +1,95 @@
+{% load static %}
+
+<main class="no-style">
+  <div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+      <div class="col col-sm-6 col-md-6" style="background-color: #191919; border-radius: 8px">
+        <form id="formId">
+          <div class="row d-flex justify-content-center mt-2">
+              <div class="col col-sm-6 col-md-6">
+                      <label class="form-label d-flex justify-content-left" for="user_first_name"style="color: white;">Primeiro Nome</label>  
+                      <input
+                          class="form-control"
+                          id="user_first_name"
+                          type="text"
+                          value="{{ user.first_name }}"
+                          required
+                      />
+              </div>
+              <div class="col col-sm-6 col-md-6">
+                  <label class="form-label d-flex justify-content-left" for="user_last_name"style="color: white;">Ultimo Nome</label>  
+                  <input
+                      class="form-control"
+                      id="user_last_name"
+                      type="text"
+                      value="{{ user.last_name }}"
+                      required
+                  />
+              </div>
+          </div>
+          <div class="row d-flex justify-content-center mt-2">
+              <div class="col col-sm-12 col-md-12">
+                      <label class="form-label d-flex justify-content-left" for="user_email"style="color: white;">E-mail</label>  
+                      <input
+                          class="form-control"
+                          id="user_email"
+                          type="email"
+                          value="{{ user.email }}"
+                          required
+                      />
+              </div>
+          </div>
+          <div class="row d-flex justify-content-center mt-2">
+              <div class="col col-sm-6 col-md-6">
+                      <label class="form-label d-flex justify-content-left" for="user_cpf"style="color: white;">CPF</label>  
+                      <input
+                          class="form-control"
+                          id="user_cpf"
+                          type="text"
+                          value="{{ user.cpf }}"
+                          maxlength="14"
+                          minlength="14"
+                          required
+                      />
+              </div>
+              <div class="col col-sm-6 col-md-6">
+                  <label class="form-label d-flex justify-content-left" for="user_born_date"style="color: white;">Data de nacimento</label>  
+                  <input
+                      class="form-control"
+                      id="user_born_date"
+                      type="date"
+                      value="{{ user.born_date }}"
+                      required
+                  />
+              </div>
+          </div>
+          <div class="row d-flex justify-content-center mt-2">
+              <div class="col col-sm-12 col-md-12">
+                      <label class="form-label d-flex justify-content-left" for="user_password_1"style="color: white;">Senha</label>  
+                      <input
+                          class="form-control"
+                          id="user_password_1"
+                          type="password"
+                          required
+                      />
+              </div>
+          </div>
+      </form>
+      <div class="row mt-5 mb-2">
+          <div class="col">
+              <button type="button" class="btn btn-light"
+                      onclick="history.back();">
+                          Voltar
+              </button> 
+          </div>
+          <div class="col d-flex justify-content-end">
+              <button type="button" class="btn btn-light"
+                      id="email" onclick="register();">
+                      Criar  
+              </button>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</main>

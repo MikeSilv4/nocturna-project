@@ -28,3 +28,7 @@ function loader(){
     return spinner;
     
 }
+
+$('.dropdown-toggle').click(function() {
+    $(this).next('.dropdown-menu').toggle(); // Alterna a visibilidade do menu
+});

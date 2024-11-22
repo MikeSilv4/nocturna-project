@@ -4,11 +4,20 @@ function register(){
 
     if (!form.checkValidity()) {
 
-        Swal.fire({
-            title: "Erro",
-            text: "Por favor, preencha os campos de E-mail e senha.",
-            icon: "error"
-        });
+        if (!emailField.validity.valid) {
+            Swal.fire({
+                title: "Erro",
+                text: "Por favor, insira um e-mail válido.",
+                icon: "error"
+            });
+        }
+        else{
+            Swal.fire({
+                title: "Erro",
+                text: "Por favor, revise as informações.",
+                icon: "error"
+            });
+        }
 
         return;
     }
@@ -38,9 +47,14 @@ function register(){
         if(response.ok){
             window.location.href = `${window.location.origin}/dash/home/`;
         }else{
+            return response.json();
+        }
+    })
+    .then((data) => {
+        if (data) {
             Swal.fire({
                 title: "Erro",
-                text: "Erro",
+                text: data.details,
                 icon: "error"
             });
         }
@@ -58,8 +72,17 @@ function getData(){
     let last_name = document.getElementById("user_last_name").value;
     let password = document.getElementById("user_password_1").value;
     let cpf = document.getElementById("user_cpf").value;
+    cpf = cpf.replace(/[.-]/g, '');
     let born_date = document.getElementById("user_born_date").value;
 
     return {email, first_name, last_name, password, cpf, born_date};
 
 }
+
+document.getElementById('user_cpf').addEventListener('input', function(e) {
+    var cpf = e.target.value.replace(/\D/g, '');
+    cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
+    cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
+    cpf = cpf.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+    e.target.value = cpf;
+  });
